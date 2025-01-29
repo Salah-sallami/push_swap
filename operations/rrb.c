@@ -2,7 +2,7 @@
 #include "../ft_printf/ft_printf.h"
 
 
-void ft_sa(t_list **stack_a)
+void ft_rrb(t_list **stack_b)
 {
-    ft_swap(stack_a);
+    ft_reverse_rotate(stack_b);
 }

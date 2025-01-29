@@ -7,13 +7,7 @@ typedef struct node
 {
     int data;
     struct node *link;
-}a;
-
-typedef struct b
-{
-    int data;
-    struct b *link;
-}b;
+}t_list;
 
 
 #endif
