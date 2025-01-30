@@ -5,4 +5,5 @@
 void ft_sb(t_list **stack_b)
 {
     ft_swap(stack_b);
+    ft_printf("sb\n");
 }

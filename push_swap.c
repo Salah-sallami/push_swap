@@ -144,6 +144,9 @@ int main(int argc, char *argv[])
     t_list *stack_a = (t_list *)malloc(sizeof(t_list));
     t_list *stack_b = NULL;
 
+    if(!argv[1])
+        return 0;
+
     if (!push_argument(argv, stack_a))
     {
         ft_printf("Error\n");
@@ -156,16 +159,16 @@ int main(int argc, char *argv[])
         return 0;
     }
 
-    ft_pb(&stack_a,&stack_b);
-    ft_pb(&stack_a,&stack_b);
-    ft_pb(&stack_a,&stack_b);
-    ft_pb(&stack_a,&stack_b);
+    // ft_pb(&stack_a,&stack_b);
+    // ft_pb(&stack_a,&stack_b);
+    // ft_pa(&stack_a,&stack_b);
+    // ft_pb(&stack_a,&stack_b);
 
 
     // ft_printf("%p\n",stack_b);
-    // ft_sb(&stack_b);
+    ft_sb(&stack_b);
     // ft_ra(&stack_a);
-    // ft_rb(&stack_b);
+    // ft_rrb(&stack_b);
 
     // ft_rrb(&stack_b);
     // ft_rra(&stack_a);
@@ -175,21 +178,21 @@ int main(int argc, char *argv[])
  
 
 
-    ft_printf("| stack a |\n");
-    ft_printf("-----------\n");
-    while (stack_a != NULL)
-    {
-        ft_printf("| %d |\n", stack_a->data);
-        stack_a = stack_a->link;
-    }
+    // ft_printf("| stack a |\n");
+    // ft_printf("-----------\n");
+    // while (stack_a != NULL)
+    // {
+    //     ft_printf("| %d |\n", stack_a->data);
+    //     stack_a = stack_a->link;
+    // }
 
-    ft_printf("\n\n| stack b |\n");
-    ft_printf("-----------\n");
-    while (stack_b != NULL)
-    {
-        ft_printf("| %d |\n", stack_b->data);
-        stack_b = stack_b->link;
-    }
+    // ft_printf("\n\n| stack b |\n");
+    // ft_printf("-----------\n");
+    // while (stack_b != NULL)
+    // {
+    //     ft_printf("| %d |\n", stack_b->data);
+    //     stack_b = stack_b->link;
+    // }
 
 
 }

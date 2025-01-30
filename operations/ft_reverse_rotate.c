@@ -7,6 +7,8 @@ void ft_reverse_rotate(t_list **head_stack)
     t_list *head;
     tmp = *head_stack;
     head = *head_stack;
+     if ((*head_stack) == NULL )
+        return;
     if ((*head_stack)->link == NULL)
         return;
 

@@ -5,4 +5,5 @@
 void ft_ra(t_list **stack_a)
 {
     ft_rotate(stack_a);
+    ft_printf("ra\n");
 }
