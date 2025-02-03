@@ -141,6 +141,140 @@ int push_argument(char *argv[], t_list *head)
 	return 1;
 }
 
+static void push_b(t_list **stack_a, t_list **stack_b, int value, int number)
+{
+	t_list *tmp;
+	tmp = *stack_a;
+	int loop = 0;
+	ft_printf("|number %d |\n", number / 2);
+
+	while (*stack_a != NULL)
+	{
+		if ((*stack_a)->data <= value)
+		{
+			*stack_a = tmp;
+			tmp = NULL;
+			if (loop <= (number / 2))
+			{
+				while (loop)
+				{
+					ft_ra(stack_a);
+					loop--;
+				}
+			}
+			else
+			{
+				loop = number - loop;
+				while (loop)
+				{
+					ft_rra(stack_a);
+					loop--;
+				}
+			}
+
+			ft_pb(stack_a, stack_b);
+			number--;
+			tmp = *stack_a;
+		}
+		else
+		{
+			loop++;
+			*stack_a = (*stack_a)->link;
+		}
+	}
+	*stack_a = tmp;
+}
+
+static void Keep_3_in_stack_a(t_list **stack_a, t_list **stack_b)
+{
+	int number = 0;
+	t_list *tmp;
+	tmp = *stack_a;
+	while (tmp != NULL)
+	{
+		number++;
+		tmp = tmp->link;
+	}
+	tmp = NULL;
+	ft_printf("| %d |\n", number);
+	while (number > 3)
+	{
+		ft_pb(stack_a, stack_b);
+		number--;
+	}
+}
+static void sort(t_list **stack_a)
+{
+	int number = 0;
+	int value = 0;
+	t_list *tmp;
+	tmp = *stack_a;
+	while (tmp != NULL)
+	{
+		number++;
+		tmp = tmp->link;
+	}
+	tmp = NULL;
+	if (number <= 1)
+		return;
+	else if (number == 2)
+	{
+		int a = (*stack_a)->data;
+		int b = (*stack_a)->link->data;
+		if (a > b)
+		{
+			ft_swap(stack_a);
+			return ;
+		}
+		return;
+	}
+	int a = (*stack_a)->data;
+	int b = (*stack_a)->link->data;
+	int c = (*stack_a)->link->link->data;
+
+	if (a < c && a < b && c < b)
+	{
+		ft_ra(stack_a);
+		ft_sa(stack_a);
+		ft_rra(stack_a);
+	}
+	else if (b < a && b < c && a < c)
+		ft_sa(stack_a);
+	else if (b < c && b < a && c < a)
+		ft_ra(stack_a);
+	else if (c < b && c < a && b < a)
+	{
+		ft_ra(stack_a);
+		ft_sa(stack_a);
+	}
+	else if (c < a && c < b && a < b)
+		ft_rra(stack_a);
+
+}
+
+static void algo(t_list **stack_a, t_list **stack_b)
+{
+	/////// sum data | number data /////////
+	int sum = 0;
+	int number = 0;
+	int value = 0;
+	t_list *tmp;
+	tmp = *stack_a;
+	while (tmp != NULL)
+	{
+		sum += tmp->data;
+		number++;
+		tmp = tmp->link;
+	}
+	tmp = NULL;
+	value = sum / number;
+	ft_printf("|value = %d |\n", value);
+
+	push_b(stack_a, stack_b, value, number);
+	Keep_3_in_stack_a(stack_a, stack_b);
+	sort(stack_a);
+}
+
 int main(int argc, char *argv[])
 {
 	t_list *stack_a = (t_list *)malloc(sizeof(t_list));
@@ -161,33 +295,21 @@ int main(int argc, char *argv[])
 		return 0;
 	}
 
-	ft_pb(&stack_a, &stack_b);
-	ft_pb(&stack_a, &stack_b);
-	ft_pa(&stack_a, &stack_b);
-	ft_pb(&stack_a, &stack_b);
+	algo(&stack_a, &stack_b);
 
-	// ft_printf("%p\n",stack_b);
-	ft_sb(&stack_b);
-	ft_ra(&stack_a);
-	ft_rrb(&stack_b);
+	ft_printf("| stack a |\n");
+	ft_printf("-----------\n");
+	while (stack_a != NULL)
+	{
+		ft_printf("| %d |\n", stack_a->data);
+		stack_a = stack_a->link;
+	}
 
-	// ft_rrb(&stack_b);
-	// ft_rra(&stack_a);
-	// ft_rrr(&stack_a,&stack_b);
-
-	// ft_printf("| stack a |\n");
-	// ft_printf("-----------\n");
-	// while (stack_a != NULL)
-	// {
-	//     // ft_printf("\n", stack_a->data);
-	//     stack_a = stack_a->link;
-	// }
-
-	// ft_printf("\n\n| stack b |\n");
-	// ft_printf("-----------\n");
-	// while (stack_b != NULL)
-	// {
-	//     ft_printf("| %d |\n", stack_b->data);
-	//     stack_b = stack_b->link;
-	// }
+	ft_printf("\n\n| stack b |\n");
+	ft_printf("-----------\n");
+	while (stack_b != NULL)
+	{
+		ft_printf("| %d |\n", stack_b->data);
+		stack_b = stack_b->link;
+	}
 }

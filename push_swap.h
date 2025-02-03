@@ -6,6 +6,7 @@
 typedef struct node
 {
     int data;
+    int index;
     struct node *link;
 }t_list;
 
