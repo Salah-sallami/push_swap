@@ -21,4 +21,5 @@ void algo(t_list **stack_a, t_list **stack_b)
 	push_b(stack_a, stack_b, value, number);
 	Keep_3_in_stack_a(stack_a, stack_b);
 	sort(stack_a);
+	
 }

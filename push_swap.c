@@ -2,7 +2,6 @@
 #include "push_swap.h"
 #include "lib_linksList/lib_linksList.h"
 
-
 int main(int argc, char *argv[])
 {
 	t_list *stack_a = (t_list *)malloc(sizeof(t_list));
@@ -20,6 +19,12 @@ int main(int argc, char *argv[])
 	if (!check_double(stack_a))
 	{
 		ft_printf("Error\n");
+		return 0;
+	}
+	// ft_printf("%d ==\n", check_sort(&stack_a));
+	if (check_sort(&stack_a) != 1)
+	{
+
 		return 0;
 	}
 
