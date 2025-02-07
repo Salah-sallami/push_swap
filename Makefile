@@ -8,7 +8,7 @@ SRC = ft_printf/ft_putchar.c ft_printf/ft_printf.c ft_printf/ft_putnbr.c ft_prin
 	operations/ft_reverse_rotate.c operations/rra.c operations/rrb.c operations/rrr.c \
 	lib_linksList/ft_lstsize.c lib_linksList/check_integer.c lib_linksList/check_nmb.c lib_linksList/add_at_end.c \
 	lib_linksList/check_double.c lib_linksList/push_argument.c lib_linksList/push_b.c lib_linksList/Keep_3_in_stack_a.c \
-	lib_linksList/sort.c lib_linksList/algo.c lib_linksList/check_sort.c
+	lib_linksList/sort.c lib_linksList/algo.c lib_linksList/check_sort.c lib_linksList/target_b.c lib_linksList/add_index.c
 
 OBJS = ${SRC:.c=.o}
 

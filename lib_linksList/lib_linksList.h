@@ -14,5 +14,7 @@ void Keep_3_in_stack_a(t_list **stack_a, t_list **stack_b);
 void sort(t_list **stack_a);
 void algo(t_list **stack_a, t_list **stack_b);
 int check_sort(t_list **stack_a);
+void target_b(t_list **stack_a, t_list **stack_b);
+void add_index(t_list **stack_a, t_list **stack_b);
 
 #endif
