@@ -3,6 +3,40 @@
 #include "lib_linksList.h"
 #include "../ft_printf/ft_printf.h"
 
+static void take_minData_to_head(t_list **stack_a)
+{
+	int size = ft_lstsize(*stack_a);
+	t_list *tmp;
+	tmp = *stack_a;
+	int min = tmp->data;
+	int index = tmp->index;
+	while (tmp)
+	{
+		if (tmp->data < min)
+		{
+			min = tmp->data;
+			index = tmp->index;
+		}
+		tmp = tmp->link;
+	}
+	// ft_printf("min = %d", index);
+	if (index <= (size / 2))
+	{
+		while (index--)
+		{
+			ft_ra(stack_a);
+		}
+	}
+	else
+	{
+		index = size - index ;
+		while (index--)
+		{
+			ft_rra(stack_a);
+		}
+	}
+}
+
 void algo(t_list **stack_a, t_list **stack_b)
 {
 	int sum = 0;
@@ -79,4 +113,6 @@ void algo(t_list **stack_a, t_list **stack_b)
 			break;
 	}
 	add_index(stack_a, stack_b);
+
+	take_minData_to_head(stack_a);
 }

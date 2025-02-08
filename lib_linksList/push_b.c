@@ -8,7 +8,7 @@ void push_b(t_list **stack_a, t_list **stack_b, int value, int number)
 	t_list *tmp;
 	tmp = *stack_a;
 	int loop = 0;
-	ft_printf("|number %d |\n", number / 2);
+	// ft_printf("|number %d |\n", number / 2);
 
 	while (*stack_a != NULL && ft_lstsize(*stack_a) > 3)
 	{
