@@ -57,22 +57,6 @@ void algo(t_list **stack_a, t_list **stack_b)
 	Keep_3_in_stack_a(stack_a, stack_b);
 	sort(stack_a);
 
-	//////=====/////
-
-	// target_b(stack_a,stack_b);
-	// target_b(stack_a,stack_b);
-	// add_index(stack_a, stack_b);
-	// target_b(stack_a, stack_b);
-	// ft_ra(stack_a);
-	// ft_pa(stack_a, stack_b);
-	// add_index(stack_a, stack_b);
-	// target_b(stack_a, stack_b);
-	// ft_rra(stack_a);
-	// ft_pa(stack_a, stack_b);
-	// add_index(stack_a, stack_b);
-	// target_b(stack_a, stack_b);
-	// add_index(stack_a,stack_b);
-
 	t_list *tmp_b = *stack_b;
 	int loop_head;
 	int i = ft_lstsize(tmp_b);
