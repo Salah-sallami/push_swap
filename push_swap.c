@@ -34,7 +34,7 @@ int main(int argc, char *argv[])
 	// ft_printf("-----------\n");
 	// while (stack_a != NULL)
 	// {
-	// 	ft_printf("| %d | index => %d | target => %d\n", stack_a->data, stack_a->index, stack_a->target);
+	// 	ft_printf("| %d | index => %d | target => %d | total => %d\n", stack_a->data, stack_a->index, stack_a->target , stack_a->total_moves);
 	// 	stack_a = stack_a->link;
 	// }
 
@@ -42,7 +42,7 @@ int main(int argc, char *argv[])
 	// ft_printf("-----------\n");
 	// while (stack_b != NULL)
 	// {
-	// 	ft_printf("| %d | index => %d | target => %d\n", stack_b->data, stack_b->index, stack_b->target);
+	// 	ft_printf("| %d | index => %d | target => %d | total => %d\n", stack_b->data, stack_b->index, stack_b->target , stack_b->total_moves);
 	// 	stack_b = stack_b->link;
 	// }
 }

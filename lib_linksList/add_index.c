@@ -3,6 +3,8 @@
 
 void add_index(t_list **stack_a, t_list **stack_b)
 {
+//    if (!stack_a || !stack_b || !*stack_b)
+//         return;
     t_list *tmp_a = *stack_a;
     t_list *tmp_b = *stack_b;
     int i = 0;

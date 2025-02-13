@@ -5,7 +5,7 @@
 
 static void take_minData_to_head(t_list **stack_a)
 {
-	int size = ft_lstsize(*stack_a);
+	// int size = ft_lstsize(*stack_a);
 	t_list *tmp;
 	tmp = *stack_a;
 	int min = tmp->data;
@@ -19,8 +19,8 @@ static void take_minData_to_head(t_list **stack_a)
 		}
 		tmp = tmp->link;
 	}
-	// ft_printf("min = %d", index);
-	if (index <= (size / 2))
+	// ft_printf("min_data = %d", index);
+	if (index <= (ft_lstsize(*stack_a) / 2))
 	{
 		while (index--)
 		{
@@ -29,13 +29,82 @@ static void take_minData_to_head(t_list **stack_a)
 	}
 	else
 	{
-		index = size - index ;
+		index = ft_lstsize(*stack_a) - index;
 		while (index--)
 		{
 			ft_rra(stack_a);
 		}
 	}
 }
+
+// static int check_data(t_list **stack_a, int data_a, int data_b)
+// {
+// 	t_list *tmp_a = *stack_a;
+// 	int index;
+
+// 	while (tmp_a)
+// 	{
+
+// 		//  ft_printf("%d >= %d && %d > %d \n",data_a,tmp_a->data , tmp_a->data ,data_b);
+// 		if (data_a >= tmp_a->data && tmp_a->data > data_b)
+// 		{
+// 			data_a = tmp_a->data;
+// 			index = tmp_a->index;
+// 			// ft_printf("tmp_a->index =%d =ok\n",tmp_a->index);
+// 		}
+// 		tmp_a = tmp_a->link;
+// 	}
+// 	// ft_printf("index =%d =ok\n",index);
+
+// 	return index;
+// }
+
+// static void target_bb(t_list **stack_a, t_list **stack_b)
+// {
+// 	t_list *tmp_b;
+// 	t_list *tmp_a;
+
+// 	if (!stack_a || !stack_b || !*stack_b)
+// 		return;
+
+// 	tmp_b = *stack_b;
+// 	while (tmp_b)
+// 	{
+// 		tmp_a = *stack_a;
+
+// 		int min = tmp_a->data;
+// 		int index = tmp_a->index;
+// 		while (tmp_a)
+// 		{
+// 			if (tmp_a->data < min)
+// 			{
+// 				min = tmp_a->data;
+// 				index = tmp_a->index;
+// 			}
+// 			tmp_a = tmp_a->link;
+// 		}
+
+// 		tmp_b->target = index;
+// 		tmp_a = *stack_a;
+
+// 		while (tmp_a)
+// 		{
+
+// 			if (tmp_b->data < tmp_a->data)
+// 			{
+// 				add_index(stack_a, stack_b);
+// 				tmp_b->target = check_data(stack_a, tmp_a->data, tmp_b->data);
+// 				// ft_printf("tmp_b->data  (%d)\n",tmp_b->target);
+
+// 				break;
+// 			}
+
+// 			tmp_a = tmp_a->link;
+// 		}
+
+// 		tmp_b = tmp_b->link;
+// 	}
+// }
 
 void algo(t_list **stack_a, t_list **stack_b)
 {
@@ -56,46 +125,27 @@ void algo(t_list **stack_a, t_list **stack_b)
 	push_b(stack_a, stack_b, value, number);
 	Keep_3_in_stack_a(stack_a, stack_b);
 	sort(stack_a);
+	// ft_printf("======\n");
+	// add_index(stack_a, stack_b);
+	// target_bb(stack_a, stack_b);
+	// ft_ra(stack_a);
+	// ft_pa(stack_a, stack_b);
+	// add_index(stack_a, stack_b);
+	// target_bb(stack_a, stack_b);
+	// ft_rb(stack_b);
+	// ft_pa(stack_a, stack_b);
+	// add_index(stack_a, stack_b);
+	// target_bb(stack_a, stack_b);
 
-	t_list *tmp_b = *stack_b;
-	int loop_head;
-	int i = ft_lstsize(tmp_b);
-	int new_size = ft_lstsize(*stack_a);
 
-	while (i--)
-	{
-		if (!(*stack_b))
-			return;
+	////////////////////////////
+	target_b(stack_a, stack_b);
+	// ft_pa(stack_a, stack_b);
+	// target_b(stack_a, stack_b);
+	// ft_pa(stack_a, stack_b);
+	// target_b(stack_a, stack_b);
 
-		add_index(stack_a, stack_b);
-		target_b(stack_a, stack_b);
-		loop_head = (*stack_b)->target;
-		new_size = ft_lstsize(*stack_a);
-		if (loop_head <= (new_size / 2))
-		{
-			while (loop_head)
-			{
-				if (*stack_a && (*stack_a)->link)
-					ft_ra(stack_a);
-				loop_head--;
-			}
-		}
-		else
-		{
-			loop_head = new_size - loop_head;
-			while (loop_head)
-			{
-				if (*stack_a && (*stack_a)->link)
-					ft_rra(stack_a);
-				loop_head--;
-			}
-		}
 
-		ft_pa(stack_a, stack_b);
-
-		if (!(*stack_b))
-			break;
-	}
 	add_index(stack_a, stack_b);
 
 	take_minData_to_head(stack_a);
