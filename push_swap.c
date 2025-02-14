@@ -21,14 +21,11 @@ int main(int argc, char *argv[])
 		ft_printf("Error\n");
 		return 0;
 	}
-	// ft_printf("%d ==\n", check_sort(&stack_a));
+	
 	if (check_sort(&stack_a) != 1)
-	{
-
 		return 0;
-	}
 
-	algo(&stack_a, &stack_b);
+	algorithm(&stack_a, &stack_b);
 
 	// ft_printf("| stack a |\n");
 	// ft_printf("-----------\n");

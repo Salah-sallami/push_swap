@@ -15,17 +15,17 @@ static int first_argument(char *argv, t_list *head)
 	{
 		p = malloc(sizeof(int) * (check_nmb(argv)));
 		p = ft_split(argv, ' ');
-		head->data = atoi(p[0]);
+		head->data = ft_atoi(p[0]);
 		head->link = NULL;
 		j = 1;
 		while (p[j])
-			add_at_end(head, atoi(p[j++]));
+			add_at_end(head, ft_atoi(p[j++]));
 		free(p);
 	}
 	else
 	{
 
-		head->data = atoi(argv);
+		head->data = ft_atoi(argv);
 		head->link = NULL;
 	}
 	return 1;
@@ -49,11 +49,11 @@ static int after_first_argument(char *argv[], t_list *head)
 			p = ft_split(argv[i], ' ');
 			j = 0;
 			while (p[j])
-				add_at_end(head, atoi(p[j++]));
+				add_at_end(head, ft_atoi(p[j++]));
 			free(p);
 		}
 		else
-			add_at_end(head, atoi(argv[i]));
+			add_at_end(head, ft_atoi(argv[i]));
 		i++;
 	}
 	return 1 ;

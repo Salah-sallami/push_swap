@@ -3,18 +3,14 @@
 #include "../ft_printf/ft_printf.h"
 #include "lib_linksList.h"
 
-void push_b(t_list **stack_a, t_list **stack_b, int value, int number)
+void push_b(t_list **stack_a, t_list **stack_b, int value)
 {
 	t_list *tmp;
 	tmp = *stack_a;
 	int loop = 0;
-	//remove number
-	(void)number;
-	// ft_printf("|number %d |\n", number / 2);
 
 	while (*stack_a != NULL && ft_lstsize(*stack_a) > 3)
 	{
-			// ft_printf("value = %d | (*stack_a)->data = %d\n",value , (*stack_a)->data);
 		if ((*stack_a)->data < value)
 		{
 			*stack_a = tmp;
@@ -38,7 +34,6 @@ void push_b(t_list **stack_a, t_list **stack_b, int value, int number)
 			}
 
 			ft_pb(stack_a, stack_b);
-			// number--;
 			tmp = *stack_a;
 		}
 		else
