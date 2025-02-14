@@ -24,7 +24,7 @@ static void take_minData_to_head(t_list **stack_a)
 	{
 		while (index--)
 		{
-			ft_ra(stack_a);
+			ft_ra(stack_a,'Y');
 		}
 	}
 	else
@@ -32,7 +32,7 @@ static void take_minData_to_head(t_list **stack_a)
 		index = ft_lstsize(*stack_a) - index;
 		while (index--)
 		{
-			ft_rra(stack_a);
+			ft_rra(stack_a,'Y');
 		}
 	}
 }

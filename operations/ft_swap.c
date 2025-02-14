@@ -12,4 +12,5 @@ void ft_swap(t_list **head_stack)
     *head_stack = (*head_stack)->link;
     tmp->link = (*head_stack)->link;
     (*head_stack)->link = tmp;
+    
 }

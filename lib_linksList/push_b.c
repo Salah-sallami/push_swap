@@ -23,7 +23,7 @@ void push_b(t_list **stack_a, t_list **stack_b, int value, int number)
 			{
 				while (loop)
 				{
-					ft_ra(stack_a);
+					ft_ra(stack_a,'Y');
 					loop--;
 				}
 			}
@@ -32,7 +32,7 @@ void push_b(t_list **stack_a, t_list **stack_b, int value, int number)
 				loop = ft_lstsize(*stack_a) - loop;
 				while (loop)
 				{
-					ft_rra(stack_a);
+					ft_rra(stack_a,'Y');
 					loop--;
 				}
 			}

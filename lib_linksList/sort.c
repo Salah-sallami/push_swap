@@ -11,7 +11,7 @@ void sort(t_list **stack_a)
 		int b = (*stack_a)->link->data;
 		if (a > b)
 		{
-			ft_swap(stack_a);
+			ft_sa(stack_a);
 			return ;
 		}
 		return;
@@ -22,20 +22,20 @@ void sort(t_list **stack_a)
 
 	if (a < c && a < b && c < b)
 	{
-		ft_ra(stack_a);
+		ft_ra(stack_a,'Y');
 		ft_sa(stack_a);
-		ft_rra(stack_a);
+		ft_rra(stack_a,'Y');
 	}
 	else if (b < a && b < c && a < c)
 		ft_sa(stack_a);
 	else if (b < c && b < a && c < a)
-		ft_ra(stack_a);
+		ft_ra(stack_a,'Y');
 	else if (c < b && c < a && b < a)
 	{
-		ft_ra(stack_a);
+		ft_ra(stack_a,'Y');
 		ft_sa(stack_a);
 	}
 	else if (c < a && c < b && a < b)
-		ft_rra(stack_a);
+		ft_rra(stack_a,'Y');
 
 }
