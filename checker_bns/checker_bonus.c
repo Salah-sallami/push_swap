@@ -23,14 +23,6 @@ static int check_str(char *move, char *str)
 		i++;
 	}
 	return 1;
-	// int i = 0;
-	// while (str[i] && move[i] && move[i] != '\n')
-	// {
-	// 	if (move[i] != str[i])
-	// 		return 0;
-	// 	i++;
-	// }
-	// return (str[i] == '\0' && (move[i] == '\n' || move[i] == '\0'));
 }
 
 static int process(t_check **stack_a, t_check **stack_b, char *move)
@@ -68,7 +60,6 @@ static int process(t_check **stack_a, t_check **stack_b, char *move)
 int main(int argc, char *argv[])
 {
 	char *move = NULL;
-	// move = get_next_line(fd);
 
 	t_check *stack_a = (t_check *)malloc(sizeof(t_check));
 	t_check *stack_b = NULL;
@@ -115,21 +106,10 @@ int main(int argc, char *argv[])
 		min_data = tmp_a->data;
 		tmp_a = tmp_a->link;
 	}
-	ft_printf("OK");
 
-	ft_printf("| stack a |\n");
-	ft_printf("-----------\n");
-	while (stack_a != NULL)
-	{
-		ft_printf("| %d | index => %d | target => %d | total => %d\n", stack_a->data, stack_a->index, stack_a->target, stack_a->total_moves);
-		stack_a = stack_a->link;
-	}
+	if (stack_b)
+		ft_printf("KO");
+	else
+		ft_printf("OK");
 
-	ft_printf("\n\n| stack b |\n");
-	ft_printf("-----------\n");
-	while (stack_b != NULL)
-	{
-		ft_printf("| %d | index => %d | target => %d | total => %d\n", stack_b->data, stack_b->index, stack_b->target, stack_b->total_moves);
-		stack_b = stack_b->link;
-	}
 }
