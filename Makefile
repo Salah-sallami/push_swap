@@ -25,11 +25,17 @@ OBJS = ${SRC:.c=.o}
 
 OBJS_BONUS = ${SRC_BONUS:.c=.o}
 
-HEADERS = ${push_swap.h ft_printf/ft_printf.h lib_linksList/lib_linksList.h libft/libft.h operations/operations.h}
+HEADERS = push_swap.h ft_printf/ft_printf.h lib_linksList/lib_linksList.h libft/libft.h operations/operations.h
 
-NAME = libftprintf.a
+HEADERS_BONUS = checker_bns/checker.h checker_bns/ft_printf/ft_printf.h checker_bns/lib_linksList/lib_linksList.h checker_bns/libft/libft.h checker_bns/operations/operations.h checker_bns/next_line/get_next_line.h
 
-NAME_BONUS = libftprintf_bonus.a
+NAME = libft_push_swap.a
+
+NAME_BONUS = libft_push_swap_bonus.a
+
+NAME_OUTPUT = push_swap
+
+NAME_OUTPUT_BONUS = checker
 
 LIBC = ar rcs
 
@@ -40,7 +46,7 @@ CFLAGS = -Wall -Wextra -Werror
 RM = rm -rf
 
 all: ${NAME}
-	${CC} ${NAME} push_swap.c -o push_swap
+	${CC} ${NAME} push_swap.c -o ${NAME_OUTPUT}
 
 
 ${NAME}: ${OBJS}
@@ -48,13 +54,13 @@ ${NAME}: ${OBJS}
 
 
 bonus: ${NAME_BONUS}
-	${CC} ${NAME_BONUS} checker_bns/checker_bonus.c -o checker
+	${CC} ${NAME_BONUS} checker_bns/checker_bonus.c -o ${NAME_OUTPUT_BONUS}
 
 ${NAME_BONUS}: ${OBJS_BONUS}
 	${LIBC} ${NAME_BONUS} ${OBJS_BONUS}
 
 
-%.o: %.c $(HEADERS) checker_bns/checker.h
+%.o: %.c ${HEADERS} ${HEADERS_BONUS} 
 	${CC} ${CFLAGS} -c $< -o $@
 
 

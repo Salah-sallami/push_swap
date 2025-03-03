@@ -1,5 +1,4 @@
 #include "operations.h"
-#include "../ft_printf/ft_printf.h"
 
 void ft_push(t_list **from, t_list **to)
 {

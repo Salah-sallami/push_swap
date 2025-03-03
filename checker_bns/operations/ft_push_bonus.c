@@ -15,3 +15,4 @@ void ft_push(t_check **from, t_check **to)
     *to = tmp;
 
 }
+
