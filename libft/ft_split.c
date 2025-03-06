@@ -6,7 +6,7 @@
 /*   By: ssallami <ssallami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/02 11:27:21 by ssallami          #+#    #+#             */
-/*   Updated: 2025/01/26 18:40:39 by ssallami         ###   ########.fr       */
+/*   Updated: 2025/03/06 15:02:08 by ssallami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,12 +75,3 @@ char **ft_split(const char *s, char c)
 		return (NULL);
 	return (shoten2(p, s, c));
 }
-
-// int main()
-// {
-// 	char **p = ft_split("salah sallami", ' ');
-
-// 	printf("%s\n", p[0]);
-// 	printf("%s\n", p[1]);
-// 	printf("%s\n", p[2]);
-// }

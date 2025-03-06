@@ -1,5 +1,4 @@
 #include "next_line/get_next_line.h"
-#include "stdio.h"
 #include "checker.h"
 #include "lib_linksList/lib_linksList.h"
 #include "../ft_printf/ft_printf.h"
@@ -91,6 +90,8 @@ int main(int argc, char *argv[])
 			return 0;
 		move = get_next_line(STDIN_FILENO);
 	}
+
+	
 
 	t_check *tmp_a = stack_a;
 	int min_data = tmp_a->data;
