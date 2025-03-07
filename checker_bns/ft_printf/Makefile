@@ -1,4 +1,3 @@
-# checker_bns/next_line/get_next_line_bonus.c checker_bns/next_line/get_next_line_utils_bonus.c \
 
 SRC =		ft_putchar_bonus.c ft_printf_bonus.c ft_putnbr_bonus.c ft_putstr_bonus.c \
 			ft_conversions_bonus.c ft_hex_uppercase_bonus.c ft_putnbr_u_bonus.c \
