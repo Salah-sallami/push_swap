@@ -39,5 +39,8 @@
         "tuple": "c",
         "type_traits": "c",
         "checker.h": "c"
+    },
+    "[c]": {
+        "editor.defaultFormatter": "keyhr.42-c-format"
     }
 }

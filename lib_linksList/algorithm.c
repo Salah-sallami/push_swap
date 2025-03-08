@@ -1,14 +1,28 @@
-#include "../push_swap.h"
-#include "../operations/operations.h"
-#include "lib_linksList.h"
-#include "../ft_printf/ft_printf.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   algorithm.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ssallami <ssallami@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/03/07 16:31:14 by ssallami          #+#    #+#             */
+/*   Updated: 2025/03/07 16:37:25 by ssallami         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-static void take_minData_to_head(t_list **stack_a)
+#include "../operations/operations.h"
+#include "../push_swap.h"
+#include "lib_linksList.h"
+
+static void	take_min_data_to_head(t_list **stack_a)
 {
-	t_list *tmp;
+	t_list	*tmp;
+	int		min;
+	int		index;
+
 	tmp = *stack_a;
-	int min = tmp->data;
-	int index = tmp->index;
+	min = tmp->data;
+	index = tmp->index;
 	while (tmp)
 	{
 		if (tmp->data < min)
@@ -21,22 +35,26 @@ static void take_minData_to_head(t_list **stack_a)
 	if (index <= (ft_lstsize(*stack_a) / 2))
 	{
 		while (index--)
-			ft_ra(stack_a,'Y');
+			ft_ra(stack_a, 'Y');
 	}
 	else
 	{
 		index = ft_lstsize(*stack_a) - index;
 		while (index--)
-			ft_rra(stack_a,'Y');
+			ft_rra(stack_a, 'Y');
 	}
 }
 
-void algorithm(t_list **stack_a, t_list **stack_b)
+void	algorithm(t_list **stack_a, t_list **stack_b)
 {
-	int sum = 0;
-	int number = 0;
-	int value = 0;
-	t_list *tmp;
+	int		sum;
+	int		number;
+	int		value;
+	t_list	*tmp;
+
+	sum = 0;
+	number = 0;
+	value = 0;
 	tmp = *stack_a;
 	while (tmp != NULL)
 	{
@@ -46,11 +64,10 @@ void algorithm(t_list **stack_a, t_list **stack_b)
 	}
 	tmp = NULL;
 	value = sum / number;
-
 	push_b(stack_a, stack_b, value);
 	Keep_3_in_stack_a(stack_a, stack_b);
 	sort(stack_a);
 	push_target_b(stack_a, stack_b);
 	add_index(stack_a, stack_b);
-	take_minData_to_head(stack_a);
+	take_min_data_to_head(stack_a);
 }

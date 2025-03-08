@@ -1,17 +1,28 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_push.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ssallami <ssallami@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/03/07 16:14:05 by ssallami          #+#    #+#             */
+/*   Updated: 2025/03/07 16:25:20 by ssallami         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "operations.h"
 
-void ft_push(t_list **from, t_list **to)
+void	ft_push(t_list **from, t_list **to)
 {
-    t_list *tmp;
-    tmp = *from;
-    if(*from == NULL)
-        return;
-        
-    *from = (*from)->link;
-    if (to == NULL)
-        tmp->link = NULL;
-    else
-        tmp->link = *to;
-    *to = tmp;
+	t_list	*tmp;
 
+	tmp = *from;
+	if (*from == NULL)
+		return ;
+	*from = (*from)->link;
+	if (to == NULL)
+		tmp->link = NULL;
+	else
+		tmp->link = *to;
+	*to = tmp;
 }

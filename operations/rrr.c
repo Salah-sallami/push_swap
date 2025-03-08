@@ -1,10 +1,21 @@
-#include "operations.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   rrr.c                                              :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ssallami <ssallami@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/03/07 16:16:44 by ssallami          #+#    #+#             */
+/*   Updated: 2025/03/07 16:27:33 by ssallami         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../ft_printf/ft_printf.h"
+#include "operations.h"
 
-
-void ft_rrr(t_list **stack_a ,t_list **stack_b)
+void	ft_rrr(t_list **stack_a, t_list **stack_b)
 {
-    ft_rra(stack_a,'N');
-    ft_rrb(stack_b,'N');
-    ft_printf("rrr\n");
+	ft_rra(stack_a, 'N');
+	ft_rrb(stack_b, 'N');
+	ft_printf("rrr\n");
 }

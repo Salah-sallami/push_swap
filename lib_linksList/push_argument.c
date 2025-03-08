@@ -1,16 +1,27 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push_argument.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ssallami <ssallami@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/03/07 16:33:01 by ssallami          #+#    #+#             */
+/*   Updated: 2025/03/07 16:33:05 by ssallami         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "../libft/libft.h"
 #include "../push_swap.h"
 #include "lib_linksList.h"
-#include "../libft/libft.h"
 
-static int first_argument(char *argv, t_list *head)
+static int	first_argument(char *argv, t_list *head)
 {
-
-	char **p;
-	int j;
+	char	**p;
+	int		j;
 
 	///////first argument//////
 	if ((check_integer(argv) == 0))
-		return 0;
+		return (0);
 	if ((check_nmb(argv)) != 0)
 	{
 		p = malloc(sizeof(int) * (check_nmb(argv)));
@@ -24,25 +35,23 @@ static int first_argument(char *argv, t_list *head)
 	}
 	else
 	{
-
 		head->data = ft_atoi(argv);
 		head->link = NULL;
 	}
-	return 1;
+	return (1);
 }
 
-static int after_first_argument(char *argv[], t_list *head)
+static int	after_first_argument(char *argv[], t_list *head)
 {
-
-	char **p;
-	int i;
-	int j;
+	char	**p;
+	int		i;
+	int		j;
 
 	i = 2;
 	while (argv[i])
 	{
 		if ((check_integer(argv[i]) == 0))
-			return 0;
+			return (0);
 		if ((check_nmb(argv[i])) != 0)
 		{
 			p = malloc(sizeof(int) * (check_nmb(argv[i])));
@@ -56,18 +65,16 @@ static int after_first_argument(char *argv[], t_list *head)
 			add_at_end(head, ft_atoi(argv[i]));
 		i++;
 	}
-	return 1 ;
+	return (1);
 }
 
-
-
-int push_argument(char *argv[], t_list *head)
+int	push_argument(char *argv[], t_list *head)
 {
-	if(first_argument(argv[1],head) == 0 )
-		return 0;
-	
-	if(after_first_argument(argv,head) == 0 )
-		return 0;
+	if (first_argument(argv[1], head) == 0)
+		return (0);
 
-	return 1;
+	if (after_first_argument(argv, head) == 0)
+		return (0);
+
+	return (1);
 }

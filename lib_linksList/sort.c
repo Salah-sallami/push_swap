@@ -1,25 +1,39 @@
-#include "../push_swap.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   sort.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ssallami <ssallami@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/03/07 16:33:57 by ssallami          #+#    #+#             */
+/*   Updated: 2025/03/07 18:54:25 by ssallami         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../operations/operations.h"
+#include "../push_swap.h"
 #include "lib_linksList.h"
 
-void sort(t_list **stack_a)
+void	sort(t_list **stack_a)
 {
+	int	a;
+	int	b;
+	int	c;
 
 	if (ft_lstsize(*stack_a) == 2)
 	{
-		int a = (*stack_a)->data;
-		int b = (*stack_a)->link->data;
+		a = (*stack_a)->data;
+		b = (*stack_a)->link->data;
 		if (a > b)
 		{
 			ft_sa(stack_a);
-			return;
+			return ;
 		}
-		return;
+		return ;
 	}
-	int a = (*stack_a)->data;
-	int b = (*stack_a)->link->data;
-	int c = (*stack_a)->link->link->data;
-
+	a = (*stack_a)->data;
+	b = (*stack_a)->link->data;
+	c = (*stack_a)->link->link->data;
 	if (a < c && a < b && c < b)
 	{
 		ft_ra(stack_a, 'Y');
