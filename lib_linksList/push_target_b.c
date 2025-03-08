@@ -6,7 +6,7 @@
 /*   By: ssallami <ssallami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/07 16:33:45 by ssallami          #+#    #+#             */
-/*   Updated: 2025/03/07 16:33:53 by ssallami         ###   ########.fr       */
+/*   Updated: 2025/03/08 18:00:23 by ssallami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,201 +14,31 @@
 #include "../operations/operations.h"
 #include "../push_swap.h"
 
-static int	Find_nearest_data_a(t_list **stack_a, int data_a, int data_b)
+static int	calculate_total_moves(t_list *tmp_b, int size_a, int size_b)
 {
-	t_list	*tmp_a;
-	int		index;
-
-	tmp_a = *stack_a;
-	index = 0;
-	while (tmp_a)
+	if (tmp_b->index <= size_b / 2)
 	{
-		if (data_a >= tmp_a->data && tmp_a->data > data_b)
-		{
-			data_a = tmp_a->data;
-			index = tmp_a->index;
-		}
-		tmp_a = tmp_a->link;
+		if (tmp_b->target <= size_a / 2)
+			return (tmp_b->index + tmp_b->target + 1);
+		return (tmp_b->index + size_a - tmp_b->target + 1);
 	}
-	return (index);
-}
-
-static void	target_b_for_a(t_list **stack_a, t_list **stack_b)
-{
-	t_list	*tmp_b;
-	t_list	*tmp_a;
-	int		min;
-	int		index;
-
-	if (!stack_a || !stack_b || !*stack_b)
-		return ;
-	tmp_b = *stack_b;
-	while (tmp_b)
-	{
-		tmp_a = *stack_a;
-		min = tmp_a->data;
-		index = tmp_a->index;
-		while (tmp_a)
-		{
-			if (tmp_a->data < min)
-			{
-				min = tmp_a->data;
-				index = tmp_a->index;
-			}
-			tmp_a = tmp_a->link;
-		}
-		tmp_b->target = index;
-		tmp_a = *stack_a;
-		while (tmp_a)
-		{
-			if (tmp_b->data < tmp_a->data)
-			{
-				add_index(stack_a, stack_b);
-				tmp_b->target = Find_nearest_data_a(stack_a, tmp_a->data,
-						tmp_b->data);
-				break ;
-			}
-			tmp_a = tmp_a->link;
-		}
-		tmp_b = tmp_b->link;
-	}
-}
-
-static void	push_min_moves(t_list **stack_a, t_list **stack_b, int min_moves)
-{
-	t_list	*tmp_b;
-	t_list	*tmp_a;
-	int		loop_a;
-	int		loop_b;
-	int		loop_a_b;
-
-	tmp_b = *stack_b;
-	tmp_a = *stack_a;
-	while (tmp_b && tmp_b->total_moves != min_moves)
-		tmp_b = tmp_b->link;
-	if (!tmp_b)
-		return ;
-	loop_a = 0;
-	loop_b = 0;
-	loop_a_b = 0;
-	if (tmp_b->index <= (ft_lstsize(*stack_b) / 2))
-	{
-		if (tmp_b->target <= (ft_lstsize(*stack_a) / 2))
-		{
-			loop_a = tmp_b->target;
-			loop_b = tmp_b->index;
-			if (loop_a == loop_b)
-			{
-				loop_a_b = loop_a;
-				while (loop_a_b-- > 0)
-					ft_rr(stack_a, stack_b);
-			}
-			else if (loop_a > loop_b)
-			{
-				loop_a_b = loop_b;
-				loop_a -= loop_b;
-				while (loop_a_b-- > 0)
-					ft_rr(stack_a, stack_b);
-				while (loop_a-- > 0)
-					ft_ra(stack_a, 'Y');
-			}
-			else if (loop_a < loop_b)
-			{
-				loop_a_b = loop_a;
-				loop_b -= loop_a;
-				while (loop_a_b-- > 0)
-					ft_rr(stack_a, stack_b);
-				while (loop_b-- > 0)
-					ft_rb(stack_b, 'Y');
-			}
-		}
-		else
-		{
-			loop_a = ft_lstsize(*stack_a) - tmp_b->target;
-			loop_b = tmp_b->index;
-			while (loop_a--)
-			{
-				ft_rra(stack_a, 'Y');
-			}
-			while (loop_b--)
-			{
-				ft_rb(stack_b, 'Y');
-			}
-		}
-	}
-	else
-	{
-		if (tmp_b->target <= (ft_lstsize(*stack_a) / 2))
-		{
-			loop_a = tmp_b->target;
-			loop_b = ft_lstsize(*stack_b) - tmp_b->index;
-			while (loop_a--)
-			{
-				ft_ra(stack_a, 'Y');
-			}
-			while (loop_b--)
-			{
-				ft_rrb(stack_b, 'Y');
-			}
-		}
-		else
-		{
-			loop_a = ft_lstsize(*stack_a) - tmp_b->target;
-			loop_b = ft_lstsize(*stack_b) - tmp_b->index;
-			if (loop_a == loop_b)
-			{
-				loop_a_b = loop_a;
-				while (loop_a_b-- > 0)
-					ft_rrr(stack_a, stack_b);
-			}
-			else if (loop_a > loop_b)
-			{
-				loop_a_b = loop_b;
-				loop_a -= loop_b;
-				while (loop_a_b-- > 0)
-					ft_rrr(stack_a, stack_b);
-				while (loop_a-- > 0)
-					ft_rra(stack_a, 'Y');
-			}
-			else if (loop_a < loop_b)
-			{
-				loop_a_b = loop_a;
-				loop_b -= loop_a;
-				while (loop_a_b-- > 0)
-					ft_rrr(stack_a, stack_b);
-				while (loop_b-- > 0)
-					ft_rrb(stack_b, 'Y');
-			}
-		}
-	}
+	if (tmp_b->target <= size_a / 2)
+		return (size_b - tmp_b->index + tmp_b->target + 1);
+	return (size_b - tmp_b->index + size_a - tmp_b->target + 1);
 }
 
 static void	calcul_moves(t_list **stack_a, t_list **stack_b)
 {
 	t_list	*tmp_b;
-	t_list	*tmp_a;
+	int		size_a;
+	int		size_b;
 
 	tmp_b = *stack_b;
-	tmp_a = *stack_a;
+	size_a = ft_lstsize(*stack_a);
+	size_b = ft_lstsize(*stack_b);
 	while (tmp_b)
 	{
-		if (tmp_b->index <= (ft_lstsize(*stack_b) / 2))
-		{
-			if (tmp_b->target <= (ft_lstsize(*stack_a) / 2))
-				tmp_b->total_moves = tmp_b->index + tmp_b->target + 1;
-			else
-				tmp_b->total_moves = tmp_b->index + ft_lstsize(*stack_a)
-					- tmp_b->target + 1; // 0 + 5 - 3
-		}
-		else
-		{
-			if (tmp_b->target <= (ft_lstsize(*stack_a) / 2))
-				tmp_b->total_moves = ft_lstsize(*stack_b) - tmp_b->index
-					+ tmp_b->target + 1;
-			else
-				tmp_b->total_moves = ft_lstsize(*stack_b) - tmp_b->index
-					+ ft_lstsize(*stack_a) - tmp_b->target + 1;
-		}
+		tmp_b->total_moves = calculate_total_moves(tmp_b, size_a, size_b);
 		tmp_b = tmp_b->link;
 	}
 }
@@ -230,6 +60,7 @@ static int	search_min_moves(t_list **stack_b)
 	}
 	return (min_moves);
 }
+
 static void	empty_stack_b(t_list **stack_a, t_list **stack_b, int min_moves)
 {
 	t_list	*tmp_b;

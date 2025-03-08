@@ -6,13 +6,29 @@
 /*   By: ssallami <ssallami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/07 16:33:16 by ssallami          #+#    #+#             */
-/*   Updated: 2025/03/07 16:33:23 by ssallami         ###   ########.fr       */
+/*   Updated: 2025/03/08 01:55:06 by ssallami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../operations/operations.h"
 #include "../push_swap.h"
 #include "lib_linksList.h"
+
+static void	rotate_stack(t_list **stack_a, int loop)
+{
+	int	size;
+
+	size = ft_lstsize(*stack_a);
+	if (loop <= size / 2)
+		while (loop--)
+			ft_ra(stack_a, 'Y');
+	else
+	{
+		loop = size - loop;
+		while (loop--)
+			ft_rra(stack_a, 'Y');
+	}
+}
 
 void	push_b(t_list **stack_a, t_list **stack_b, int value)
 {
@@ -21,31 +37,15 @@ void	push_b(t_list **stack_a, t_list **stack_b, int value)
 
 	tmp = *stack_a;
 	loop = 0;
-	while (*stack_a != NULL && ft_lstsize(*stack_a) > 3)
+	while (*stack_a && ft_lstsize(*stack_a) > 3)
 	{
 		if ((*stack_a)->data < value)
 		{
 			*stack_a = tmp;
-			tmp = NULL;
-			if (loop <= (ft_lstsize(*stack_a) / 2))
-			{
-				while (loop)
-				{
-					ft_ra(stack_a, 'Y');
-					loop--;
-				}
-			}
-			else
-			{
-				loop = ft_lstsize(*stack_a) - loop;
-				while (loop)
-				{
-					ft_rra(stack_a, 'Y');
-					loop--;
-				}
-			}
+			rotate_stack(stack_a, loop);
 			ft_pb(stack_a, stack_b);
 			tmp = *stack_a;
+			loop = 0;
 		}
 		else
 		{

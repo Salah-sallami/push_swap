@@ -6,13 +6,28 @@
 /*   By: ssallami <ssallami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/07 16:31:14 by ssallami          #+#    #+#             */
-/*   Updated: 2025/03/07 16:37:25 by ssallami         ###   ########.fr       */
+/*   Updated: 2025/03/08 00:54:09 by ssallami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../operations/operations.h"
 #include "../push_swap.h"
 #include "lib_linksList.h"
+
+static void	loop_stack_a(t_list **stack_a, int min_index)
+{
+	if (min_index <= (ft_lstsize(*stack_a) / 2))
+	{
+		while (min_index--)
+			ft_ra(stack_a, 'Y');
+	}
+	else
+	{
+		min_index = ft_lstsize(*stack_a) - min_index;
+		while (min_index--)
+			ft_rra(stack_a, 'Y');
+	}
+}
 
 static void	take_min_data_to_head(t_list **stack_a)
 {
@@ -32,17 +47,7 @@ static void	take_min_data_to_head(t_list **stack_a)
 		}
 		tmp = tmp->link;
 	}
-	if (index <= (ft_lstsize(*stack_a) / 2))
-	{
-		while (index--)
-			ft_ra(stack_a, 'Y');
-	}
-	else
-	{
-		index = ft_lstsize(*stack_a) - index;
-		while (index--)
-			ft_rra(stack_a, 'Y');
-	}
+	loop_stack_a(stack_a, index);
 }
 
 void	algorithm(t_list **stack_a, t_list **stack_b)
@@ -65,7 +70,7 @@ void	algorithm(t_list **stack_a, t_list **stack_b)
 	tmp = NULL;
 	value = sum / number;
 	push_b(stack_a, stack_b, value);
-	Keep_3_in_stack_a(stack_a, stack_b);
+	keep_3_in_stack_a(stack_a, stack_b);
 	sort(stack_a);
 	push_target_b(stack_a, stack_b);
 	add_index(stack_a, stack_b);

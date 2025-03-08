@@ -6,7 +6,7 @@
 /*   By: ssallami <ssallami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/07 16:33:01 by ssallami          #+#    #+#             */
-/*   Updated: 2025/03/07 16:33:05 by ssallami         ###   ########.fr       */
+/*   Updated: 2025/03/08 00:55:19 by ssallami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ static int	first_argument(char *argv, t_list *head)
 	char	**p;
 	int		j;
 
-	///////first argument//////
 	if ((check_integer(argv) == 0))
 		return (0);
 	if ((check_nmb(argv)) != 0)
@@ -72,9 +71,7 @@ int	push_argument(char *argv[], t_list *head)
 {
 	if (first_argument(argv[1], head) == 0)
 		return (0);
-
 	if (after_first_argument(argv, head) == 0)
 		return (0);
-
 	return (1);
 }
