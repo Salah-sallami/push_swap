@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   rra_bonus.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ssallami <ssallami@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/03/08 22:08:53 by ssallami          #+#    #+#             */
+/*   Updated: 2025/03/08 22:08:57 by ssallami         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "operations.h"
 
-void ft_rra(t_check **stack_a)
+void	ft_rra(t_check **stack_a)
 {
-    ft_reverse_rotate(stack_a);
+	ft_reverse_rotate(stack_a);
 }

@@ -1,30 +1,45 @@
-#include "next_line/get_next_line.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   checker_bonus.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ssallami <ssallami@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/03/09 00:47:46 by ssallami          #+#    #+#             */
+/*   Updated: 2025/03/09 00:53:13 by ssallami         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "../ft_printf/ft_printf.h"
 #include "checker.h"
 #include "lib_linksList/lib_linksList.h"
-#include "../ft_printf/ft_printf.h"
+#include "next_line/get_next_line.h"
 #include "operations/operations.h"
 
-static int check_new_line(char *move)
+static int	check_new_line(char *move)
 {
 	while (*move)
 		move++;
 	if (*(move - 1) == '\n')
-		return 1;
-	return 0;
+		return (1);
+	return (0);
 }
-static int check_str(char *move, char *str)
+
+static int	check_str(char *move, char *str)
 {
-	int i = 0;
+	int	i;
+
+	i = 0;
 	while (move[i] != '\n')
 	{
 		if (move[i] != str[i])
-			return 0;
+			return (0);
 		i++;
 	}
-	return 1;
+	return (1);
 }
 
-static int process(t_check **stack_a, t_check **stack_b, char *move)
+static int	process(t_check **stack_a, t_check **stack_b, char *move)
 {
 	if (check_str(move, "pb"))
 		ft_pb(stack_a, stack_b);
@@ -49,68 +64,34 @@ static int process(t_check **stack_a, t_check **stack_b, char *move)
 	else if (check_str(move, "rrr"))
 		ft_rrr(stack_a, stack_b);
 	else
-	{
-		ft_printf("Error\n");
-		return 0;
-	}
-	return 1;
+		return (ft_printf("Error\n"), 0);
+	return (1);
 }
 
-int main(int argc, char *argv[])
+int	main(int argc, char *argv[])
 {
-	char *move = NULL;
+	char	*move;
+	t_check	*stack_a;
+	t_check	*stack_b;
 
-	t_check *stack_a = (t_check *)malloc(sizeof(t_check));
-	t_check *stack_b = NULL;
-
-	if (!argv[1] || ((check_nmb(argv[1])) == 1 && !argv[2]))
-		return 0;
-
-	if (!push_argument(argv, stack_a))
-	{
-		ft_printf("Error\n");
-		return 0;
-	}
-
-	if (!check_double(stack_a))
-	{
-		ft_printf("Error\n");
-		return 0;
-	}
-
+	stack_a = malloc(sizeof(t_check));
+	stack_b = NULL;
+	if (!argv[1] || (check_nmb(argv[1]) && !argv[2]) || !push_argument(argv,
+			stack_a) || !check_double(stack_a))
+		return (ft_printf("Error\n"), 0);
 	if (check_sort(&stack_a) != 1)
-		return 0;
-
-	int vld = 0;
+		return (0);
 	move = get_next_line(STDIN_FILENO);
-	while (move != NULL)
+	while (move)
 	{
-		vld = process(&stack_a, &stack_b, move);
-		if (vld == 0)
-			return 0;
+		if (!process(&stack_a, &stack_b, move))
+			return (0);
 		move = get_next_line(STDIN_FILENO);
 	}
-
-	
-
-	t_check *tmp_a = stack_a;
-	int min_data = tmp_a->data;
-
-	tmp_a = tmp_a->link;
-	while (tmp_a != NULL)
-	{
-		if (min_data > tmp_a->data)
-		{
-			ft_printf("KO");
-			return 0;
-		}
-		min_data = tmp_a->data;
-		tmp_a = tmp_a->link;
-	}
-
+	if (check_sort(&stack_a) == 1)
+		return (ft_printf("KO"), 0);
 	if (stack_b)
-		ft_printf("KO");
+		return (ft_printf("KO"));
 	else
-		ft_printf("OK");
-
+		return (ft_printf("OK"));
 }

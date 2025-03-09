@@ -6,7 +6,7 @@
 /*   By: ssallami <ssallami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/22 13:30:57 by ssallami          #+#    #+#             */
-/*   Updated: 2025/03/06 16:56:30 by ssallami         ###   ########.fr       */
+/*   Updated: 2025/03/08 22:04:54 by ssallami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,7 @@
 # include <sys/uio.h>
 # include <unistd.h>
 
-
-
-size_t	ft_strlen(const char *s); 
+size_t	ft_strlen(const char *s);
 char	*ft_strdup(const char *s1);
 char	*ft_strjoin(char *s1, char *s2);
 int		ft_strchr(char *s, char c);

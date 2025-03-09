@@ -1,7 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   pa_bonus.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ssallami <ssallami@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/03/08 22:08:06 by ssallami          #+#    #+#             */
+/*   Updated: 2025/03/08 22:08:12 by ssallami         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "operations.h"
 
-
-void ft_pa(t_check **stack_a, t_check **stack_b)
+void	ft_pa(t_check **stack_a, t_check **stack_b)
 {
-    ft_push(stack_b, stack_a);
+	ft_push(stack_b, stack_a);
 }

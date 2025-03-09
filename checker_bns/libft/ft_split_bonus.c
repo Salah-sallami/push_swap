@@ -1,22 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_split.c                                         :+:      :+:    :+:   */
+/*   ft_split_bonus.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ssallami <ssallami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/02 11:27:21 by ssallami          #+#    #+#             */
-/*   Updated: 2025/01/26 18:40:39 by ssallami         ###   ########.fr       */
+/*   Updated: 2025/03/08 22:06:49 by ssallami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-
-static size_t counts(const char *s, char c)
+static size_t	counts(const char *s, char c)
 {
-	size_t i;
-	size_t count;
+	size_t	i;
+	size_t	count;
 
 	i = 0;
 	count = 0;
@@ -29,7 +28,7 @@ static size_t counts(const char *s, char c)
 	return (count);
 }
 
-static char **shorten(char **p, size_t x)
+static char	**shorten(char **p, size_t x)
 {
 	while (x > 0)
 		free(p[--x]);
@@ -37,11 +36,11 @@ static char **shorten(char **p, size_t x)
 	return (NULL);
 }
 
-static char **shoten2(char **p, const char *s, char c)
+static char	**shoten2(char **p, const char *s, char c)
 {
-	size_t i;
-	size_t start;
-	size_t x;
+	size_t	i;
+	size_t	start;
+	size_t	x;
 
 	i = 0;
 	x = 0;
@@ -60,12 +59,10 @@ static char **shoten2(char **p, const char *s, char c)
 	return (p);
 }
 
-
-
-char **ft_split(const char *s, char c)
+char	**ft_split(const char *s, char c)
 {
-	size_t count;
-	char **p;
+	size_t	count;
+	char	**p;
 
 	if (!s)
 		return (NULL);
@@ -75,12 +72,3 @@ char **ft_split(const char *s, char c)
 		return (NULL);
 	return (shoten2(p, s, c));
 }
-
-// int main()
-// {
-// 	char **p = ft_split("salah sallami", ' ');
-
-// 	printf("%s\n", p[0]);
-// 	printf("%s\n", p[1]);
-// 	printf("%s\n", p[2]);
-// }

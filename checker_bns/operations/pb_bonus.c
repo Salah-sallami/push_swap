@@ -1,7 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   pb_bonus.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ssallami <ssallami@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/03/08 22:08:24 by ssallami          #+#    #+#             */
+/*   Updated: 2025/03/08 22:08:27 by ssallami         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "operations.h"
 
-
-void ft_pb(t_check **stack_a, t_check **stack_b)
+void	ft_pb(t_check **stack_a, t_check **stack_b)
 {
-    ft_push(stack_a, stack_b);
+	ft_push(stack_a, stack_b);
 }
