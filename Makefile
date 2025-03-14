@@ -11,6 +11,8 @@ NAME = push_swap
 
 NAME_BONUS = checker
 
+RM = rm -rf
+
 
 
 INCLUDES =	libft/libft.a \
@@ -24,18 +26,18 @@ INCLUDES_BONUS =	checker_bns/libft/libft.a \
 					checker_bns/operations/operations.a \
 					checker_bns/next_line/next_line.a \
 
-%.o: %.c
-	${CC} -c $< -o $@
 
 all: ${NAME}
 
-${NAME}: ${OBJS}
-	make  -C lib_linksList all
-	make  -C operations all
-	make  -C ft_printf all
-	make  -C libft all
+${NAME}: ${OBJS}  
+	make  -C lib_linksList
+	make  -C operations
+	make  -C ft_printf
+	make  -C libft
 	${CC} ${INCLUDES} ${OBJS}  -o ${NAME}
 
+%.o: %.c 
+	${CC} -c $< -o $@
 
 bonus: ${NAME_BONUS}
 
@@ -60,7 +62,6 @@ clean:
 	make -C operations clean
 	make -C ft_printf clean
 	make -C libft clean
-	rm -rf ${OBJS} ${OBJS_BS} ${NAME} ${NAME_BONUS}
 
 
 fclean: clean
@@ -73,7 +74,7 @@ fclean: clean
 	make -C operations fclean
 	make -C ft_printf fclean
 	make -C libft fclean
-	rm -rf ${OBJS} ${OBJS_BS} ${NAME} ${NAME_BONUS}
+	${RM} ${OBJS} ${OBJS_BS} ${NAME} ${NAME_BONUS}
 	
 
 re: fclean all

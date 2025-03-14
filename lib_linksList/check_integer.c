@@ -6,9 +6,11 @@
 /*   By: ssallami <ssallami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/07 16:31:52 by ssallami          #+#    #+#             */
-/*   Updated: 2025/03/08 00:50:25 by ssallami         ###   ########.fr       */
+/*   Updated: 2025/03/12 17:34:51 by ssallami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "../libft/libft.h"
 
 int	check_integer(char *str)
 {

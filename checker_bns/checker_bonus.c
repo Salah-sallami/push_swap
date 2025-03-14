@@ -6,7 +6,7 @@
 /*   By: ssallami <ssallami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/09 00:47:46 by ssallami          #+#    #+#             */
-/*   Updated: 2025/03/09 00:53:13 by ssallami         ###   ########.fr       */
+/*   Updated: 2025/03/13 20:36:39 by ssallami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,9 +68,24 @@ static int	process(t_check **stack_a, t_check **stack_b, char *move)
 	return (1);
 }
 
-int	main(int argc, char *argv[])
+static int	read_moves(t_check **stack_a, t_check **stack_b)
 {
 	char	*move;
+
+	move = get_next_line(STDIN_FILENO);
+	while (move)
+	{
+		if (!process(stack_a, stack_b, move))
+			return (0);
+		free(move);
+		move = get_next_line(STDIN_FILENO);
+	}
+	free(move);
+	return (1);
+}
+
+int	main(int argc, char *argv[])
+{
 	t_check	*stack_a;
 	t_check	*stack_b;
 
@@ -81,13 +96,8 @@ int	main(int argc, char *argv[])
 		return (ft_printf("Error\n"), 0);
 	if (check_sort(&stack_a) != 1)
 		return (0);
-	move = get_next_line(STDIN_FILENO);
-	while (move)
-	{
-		if (!process(&stack_a, &stack_b, move))
-			return (0);
-		move = get_next_line(STDIN_FILENO);
-	}
+	if (read_moves(&stack_a, &stack_b) != 1)
+		return (0);
 	if (check_sort(&stack_a) == 1)
 		return (ft_printf("KO"), 0);
 	if (stack_b)

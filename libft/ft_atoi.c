@@ -6,34 +6,38 @@
 /*   By: ssallami <ssallami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/07 16:27:59 by ssallami          #+#    #+#             */
-/*   Updated: 2025/03/07 16:28:04 by ssallami         ###   ########.fr       */
+/*   Updated: 2025/03/14 01:03:53 by ssallami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "../ft_printf/ft_printf.h"
 #include "libft.h"
 
-int	ft_atoi(char *str)
+int	ft_atoi(char *str, int *vld)
 {
-	int	sum;
-	int	sign;
-	int	found;
+	long	sum;
+	int		sign;
+
 
 	sum = 0;
 	sign = 1;
-	found = 1;
 	while (*str == ' ' || *str == '\t' || *str == '\n' || *str == '\f'
 		|| *str == '\r')
 		str++;
-	if (*str == '-')
-		sign = -1;
 	if (*str == '-' || *str == '+')
-		str++;
-	while (*str && found)
 	{
-		if (*str >= '0' && *str <= '9')
-			sum = sum * 10 + *str - '0';
-		else
-			found = 0;
+		if (*str == '-')
+			sign = -1;
+		str++;
+	}
+	while (*str >= '0' && *str <= '9')
+	{
+		sum = sum * 10 + (*str - '0');
+		if ((sign == 1 && (sum > INT_MAX)) || (sign == -1 && (-sum < INT_MIN)))
+		{
+			*vld = 0;
+			return (*vld);
+		}
 		str++;
 	}
 	return (sign * sum);

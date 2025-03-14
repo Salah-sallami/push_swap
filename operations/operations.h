@@ -6,7 +6,7 @@
 /*   By: ssallami <ssallami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/07 16:18:05 by ssallami          #+#    #+#             */
-/*   Updated: 2025/03/07 16:25:46 by ssallami         ###   ########.fr       */
+/*   Updated: 2025/03/14 00:51:40 by ssallami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 # define OPERATIONS_H
 
 # include "../push_swap.h"
-# include <stdlib.h>
 
 void	ft_push(t_list **from, t_list **to);
 void	ft_pb(t_list **stack_a, t_list **stack_b);
