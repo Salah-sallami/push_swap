@@ -6,72 +6,116 @@
 /*   By: ssallami <ssallami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/08 21:59:00 by ssallami          #+#    #+#             */
-/*   Updated: 2025/03/13 01:33:34 by ssallami         ###   ########.fr       */
+/*   Updated: 2025/03/15 02:46:09 by ssallami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../checker.h"
-#include "../libft/libft.h"
-#include "lib_linksList.h"
 
-static int	first_argument(char *argv, t_check *head)
+
+static int	process_numbers(char **p, t_check **head, int index)
 {
-	char	**p;
-	int		j;
+	int	j;
+	int	num;
+	int	vld;
 
-	if ((check_integer(argv) == 0))
-		return (0);
-	if ((check_nmb(argv)) != 0)
+	j = index;
+	vld = 1;
+	while (p[j])
 	{
-		p = malloc(sizeof(int) * (check_nmb(argv)));
-		p = ft_split(argv, ' ');
-		head->data = ft_atoi(p[0]);
-		head->link = NULL;
-		j = 1;
-		while (p[j])
-			add_at_end(head, ft_atoi(p[j++]));
-		free(p);
+		num = ft_atoi(p[j], &vld);
+		if (!vld)
+		{
+			free_split(p);
+			return (0);
+		}
+		add_at_end(head, num);
+		j++;
+	}
+	free_split(p);
+	return (1);
+}
+
+static int	push_first_argument(char **p, t_check **head, char *argv)
+{
+	int	vld;
+	int	num;
+
+	vld = 1;
+	if (p != NULL)
+	{
+		num = ft_atoi(p[0], &vld);
+		if (!vld)
+		{
+			free_split(&p[0]);
+			return (0);
+		}
+		*head = ft_lstnew(num);
 	}
 	else
 	{
-		head->data = ft_atoi(argv);
-		head->link = NULL;
+		num = ft_atoi(argv, &vld);
+		if (!vld)
+			return (0);
+		*head = ft_lstnew(num);
+		return (1);
 	}
-	return (1);
+	return (process_numbers(p, head, 1));
 }
 
-static int	after_first_argument(char *argv[], t_check *head)
+static int	first_argument(char *argv, t_check **head)
 {
 	char	**p;
-	int		i;
-	int		j;
 
-	i = 2;
-	while (argv[i])
+	if (!check_integer(argv))
+		return (0);
+	if (check_nmb(argv) > 1)
 	{
-		if ((check_integer(argv[i]) == 0))
+		p = ft_split(argv, ' ');
+		if (!p)
 			return (0);
-		if ((check_nmb(argv[i])) != 0)
+	}
+	else
+		p = NULL;
+	if (push_first_argument(p, head, argv) == 0)
+		return (0);
+	return (1);
+}
+
+static int	after_first_argument(char *argv[], t_check **head, int index)
+{
+	char	**p;
+	int		vld;
+	int		num;
+
+	vld = 1;
+	while (argv[index])
+	{
+		if (!check_integer(argv[index]))
+			return (0);
+		if (check_nmb(argv[index]) > 1)
 		{
-			p = malloc(sizeof(int) * (check_nmb(argv[i])));
-			p = ft_split(argv[i], ' ');
-			j = 0;
-			while (p[j])
-				add_at_end(head, ft_atoi(p[j++]));
-			free(p);
+			p = ft_split(argv[index], ' ');
+			if (!p || !process_numbers(p, head, 0))
+				return (0);
 		}
 		else
-			add_at_end(head, ft_atoi(argv[i]));
-		i++;
+		{
+			num = ft_atoi(argv[index], &vld);
+			if (!vld)
+				return (0);
+			add_at_end(head, num);
+		}
+		index++;
 	}
 	return (1);
 }
 
-int	push_argument(char *argv[], t_check *head)
+int	push_argument(char *argv[], t_check **head)
 {
 	if (first_argument(argv[1], head) == 0)
 		return (0);
-	if (after_first_argument(argv, head) == 0)
+	if (after_first_argument(argv, head, 2) == 0)
 		return (0);
 	return (1);
 }

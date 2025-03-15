@@ -6,13 +6,11 @@
 /*   By: ssallami <ssallami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/07 16:33:57 by ssallami          #+#    #+#             */
-/*   Updated: 2025/03/08 21:45:55 by ssallami         ###   ########.fr       */
+/*   Updated: 2025/03/14 02:10:48 by ssallami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../operations/operations.h"
 #include "../push_swap.h"
-#include "lib_linksList.h"
 
 static void	apply_moves(t_list **stack_a, char move)
 {

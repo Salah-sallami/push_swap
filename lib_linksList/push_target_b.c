@@ -6,12 +6,10 @@
 /*   By: ssallami <ssallami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/07 16:33:45 by ssallami          #+#    #+#             */
-/*   Updated: 2025/03/08 18:00:23 by ssallami         ###   ########.fr       */
+/*   Updated: 2025/03/14 02:10:38 by ssallami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../lib_linksList/lib_linksList.h"
-#include "../operations/operations.h"
 #include "../push_swap.h"
 
 static int	calculate_total_moves(t_list *tmp_b, int size_a, int size_b)

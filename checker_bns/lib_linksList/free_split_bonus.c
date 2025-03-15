@@ -1,19 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pa.c                                               :+:      :+:    :+:   */
+/*   free_split_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ssallami <ssallami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/07 16:15:33 by ssallami          #+#    #+#             */
-/*   Updated: 2025/03/14 02:11:55 by ssallami         ###   ########.fr       */
+/*   Created: 2025/03/13 19:46:59 by ssallami          #+#    #+#             */
+/*   Updated: 2025/03/15 02:54:28 by ssallami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../checker.h"
 
-void	ft_pa(t_list **stack_a, t_list **stack_b)
+void	free_split(char **p)
 {
-	ft_push(stack_b, stack_a);
-	ft_printf("pa\n");
+	int	j;
+
+	j = 0;
+	if (p)
+	{
+		while (p[j])
+			free(p[j++]);
+		free(p);
+	}
 }

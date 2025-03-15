@@ -6,13 +6,11 @@
 /*   By: ssallami <ssallami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/07 16:33:16 by ssallami          #+#    #+#             */
-/*   Updated: 2025/03/08 01:55:06 by ssallami         ###   ########.fr       */
+/*   Updated: 2025/03/14 02:10:27 by ssallami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../operations/operations.h"
 #include "../push_swap.h"
-#include "lib_linksList.h"
 
 static void	rotate_stack(t_list **stack_a, int loop)
 {

@@ -6,11 +6,11 @@
 /*   By: ssallami <ssallami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/02 11:27:21 by ssallami          #+#    #+#             */
-/*   Updated: 2025/03/08 22:06:49 by ssallami         ###   ########.fr       */
+/*   Updated: 2025/03/15 01:05:06 by ssallami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../checker.h"
 
 static size_t	counts(const char *s, char c)
 {

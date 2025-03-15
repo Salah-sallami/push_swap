@@ -6,11 +6,11 @@
 /*   By: ssallami <ssallami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/07 16:32:21 by ssallami          #+#    #+#             */
-/*   Updated: 2025/03/08 00:51:13 by ssallami         ###   ########.fr       */
+/*   Updated: 2025/03/14 02:09:52 by ssallami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "lib_linksList.h"
+#include "../push_swap.h"
 
 int	ft_lstsize(t_list *lst)
 {

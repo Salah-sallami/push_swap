@@ -6,45 +6,13 @@
 /*   By: ssallami <ssallami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/26 21:49:05 by ssallami          #+#    #+#             */
-/*   Updated: 2025/03/06 16:56:05 by ssallami         ###   ########.fr       */
+/*   Updated: 2025/03/15 01:14:40 by ssallami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "../checker.h"
 
-size_t	ft_strlen(const char *s)
-{
-	size_t	i;
 
-	i = 0;
-	if (!s)
-		return (0);
-	while (s[i])
-		i++;
-	return (i);
-}
-
-char	*ft_strdup(const char *s1)
-{
-	char	*s2;
-	size_t	size;
-	int		i;
-
-	i = 0;
-	if (!s1)
-		return (NULL);
-	size = ft_strlen(s1);
-	s2 = malloc(size + 1);
-	if (!s2)
-		return (NULL);
-	while (s1[i])
-	{
-		s2[i] = s1[i];
-		i++;
-	}
-	s2[i] = '\0';
-	return (s2);
-}
 
 char	*ft_strjoin(char *s1, char *s2)
 {
@@ -86,30 +54,3 @@ int	ft_strchr(char *s, char c)
 	return (0);
 }
 
-char	*ft_substr(char *s, unsigned int start, size_t len)
-{
-	size_t	i;
-	char	*buff;
-
-	i = 0;
-	if (!s)
-		return (NULL);
-	if (start >= ft_strlen(s))
-	{
-		len = 0;
-		start = 0;
-		return (NULL);
-	}
-	if (start + len > ft_strlen(s))
-		len = ft_strlen(s) - start;
-	buff = malloc(len + 1);
-	if (!buff)
-		return (NULL);
-	while (s[start + i] && i < len)
-	{
-		buff[i] = s[start + i];
-		i++;
-	}
-	buff[i] = '\0';
-	return (buff);
-}

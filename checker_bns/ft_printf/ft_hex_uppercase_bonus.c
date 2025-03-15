@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_hex_uppercase.c                                 :+:      :+:    :+:   */
+/*   ft_hex_uppercase_bonus.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ssallami <ssallami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/01 14:28:45 by ssallami          #+#    #+#             */
-/*   Updated: 2024/12/01 14:28:51 by ssallami         ###   ########.fr       */
+/*   Updated: 2025/03/15 00:54:59 by ssallami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../checker.h"
 
 int	ft_hex_uppercase(unsigned int x)
 {

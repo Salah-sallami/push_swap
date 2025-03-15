@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_conversions.c                                   :+:      :+:    :+:   */
+/*   ft_conversions_bonus.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ssallami <ssallami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/01 14:28:02 by ssallami          #+#    #+#             */
-/*   Updated: 2024/12/01 14:28:03 by ssallami         ###   ########.fr       */
+/*   Updated: 2025/03/15 00:54:44 by ssallami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../checker.h"
 
 int	ft_conversions(char c, va_list list)
 {

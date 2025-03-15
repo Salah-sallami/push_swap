@@ -6,11 +6,10 @@
 /*   By: ssallami <ssallami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/07 16:32:40 by ssallami          #+#    #+#             */
-/*   Updated: 2025/03/08 00:54:14 by ssallami         ###   ########.fr       */
+/*   Updated: 2025/03/14 02:10:07 by ssallami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../operations/operations.h"
 #include "../push_swap.h"
 
 void	keep_3_in_stack_a(t_list **stack_a, t_list **stack_b)

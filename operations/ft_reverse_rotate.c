@@ -6,11 +6,11 @@
 /*   By: ssallami <ssallami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/07 16:14:29 by ssallami          #+#    #+#             */
-/*   Updated: 2025/03/07 16:25:26 by ssallami         ###   ########.fr       */
+/*   Updated: 2025/03/14 02:11:40 by ssallami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "operations.h"
+#include "../push_swap.h"
 
 void	ft_reverse_rotate(t_list **head_stack)
 {

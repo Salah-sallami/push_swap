@@ -6,11 +6,11 @@
 /*   By: ssallami <ssallami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/01 14:30:07 by ssallami          #+#    #+#             */
-/*   Updated: 2024/12/01 14:30:10 by ssallami         ###   ########.fr       */
+/*   Updated: 2025/03/14 02:08:21 by ssallami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../push_swap.h"
 
 int	ft_putchar(int c)
 {

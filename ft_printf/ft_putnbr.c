@@ -6,11 +6,11 @@
 /*   By: ssallami <ssallami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/01 14:30:43 by ssallami          #+#    #+#             */
-/*   Updated: 2024/12/01 14:50:19 by ssallami         ###   ########.fr       */
+/*   Updated: 2025/03/14 02:08:11 by ssallami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../push_swap.h"
 
 static int	len_number(int n)
 {

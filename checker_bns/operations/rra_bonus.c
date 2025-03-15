@@ -6,11 +6,11 @@
 /*   By: ssallami <ssallami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/08 22:08:53 by ssallami          #+#    #+#             */
-/*   Updated: 2025/03/08 22:08:57 by ssallami         ###   ########.fr       */
+/*   Updated: 2025/03/15 00:56:50 by ssallami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "operations.h"
+#include "../checker.h"
 
 void	ft_rra(t_check **stack_a)
 {

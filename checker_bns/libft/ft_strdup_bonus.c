@@ -6,11 +6,11 @@
 /*   By: ssallami <ssallami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/08 22:06:21 by ssallami          #+#    #+#             */
-/*   Updated: 2025/03/08 22:06:42 by ssallami         ###   ########.fr       */
+/*   Updated: 2025/03/15 00:55:53 by ssallami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../checker.h"
 
 char	*ft_strdup(const char *s1)
 {

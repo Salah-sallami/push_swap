@@ -6,12 +6,11 @@
 /*   By: ssallami <ssallami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/07 16:27:59 by ssallami          #+#    #+#             */
-/*   Updated: 2025/03/14 01:03:53 by ssallami         ###   ########.fr       */
+/*   Updated: 2025/03/14 02:11:06 by ssallami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../ft_printf/ft_printf.h"
-#include "libft.h"
+#include "../push_swap.h"
 
 int	ft_atoi(char *str, int *vld)
 {

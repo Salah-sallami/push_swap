@@ -6,12 +6,10 @@
 /*   By: ssallami <ssallami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/08 17:52:53 by ssallami          #+#    #+#             */
-/*   Updated: 2025/03/08 21:39:48 by ssallami         ###   ########.fr       */
+/*   Updated: 2025/03/14 02:10:33 by ssallami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../lib_linksList/lib_linksList.h"
-#include "../operations/operations.h"
 #include "../push_swap.h"
 
 static void	handle_rr_moves(t_list **stack_a, t_list **stack_b, int loop_a,

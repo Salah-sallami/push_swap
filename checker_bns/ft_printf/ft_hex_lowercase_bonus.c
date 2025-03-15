@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_hex_lowercase.c                                 :+:      :+:    :+:   */
+/*   ft_hex_lowercase_bonus.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ssallami <ssallami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/01 14:28:19 by ssallami          #+#    #+#             */
-/*   Updated: 2024/12/01 14:28:20 by ssallami         ###   ########.fr       */
+/*   Updated: 2025/03/15 00:54:52 by ssallami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../checker.h"
 
 int	ft_hex_lowercase(unsigned int x)
 {

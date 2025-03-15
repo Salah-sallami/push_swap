@@ -6,11 +6,11 @@
 /*   By: ssallami <ssallami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/07 16:28:15 by ssallami          #+#    #+#             */
-/*   Updated: 2025/03/07 16:29:13 by ssallami         ###   ########.fr       */
+/*   Updated: 2025/03/14 02:11:14 by ssallami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../push_swap.h"
 
 char	*ft_strdup(const char *s1)
 {

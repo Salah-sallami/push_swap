@@ -6,11 +6,11 @@
 /*   By: ssallami <ssallami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/26 21:48:52 by ssallami          #+#    #+#             */
-/*   Updated: 2025/03/12 17:53:55 by ssallami         ###   ########.fr       */
+/*   Updated: 2025/03/15 00:56:05 by ssallami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "../checker.h"
 
 char	*get_after_newline(char *str)
 {

@@ -6,11 +6,11 @@
 /*   By: ssallami <ssallami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/07 16:28:23 by ssallami          #+#    #+#             */
-/*   Updated: 2025/03/07 16:29:23 by ssallami         ###   ########.fr       */
+/*   Updated: 2025/03/14 02:11:18 by ssallami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../push_swap.h"
 
 size_t	ft_strlen(const char *s1)
 {

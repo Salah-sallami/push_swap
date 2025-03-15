@@ -6,12 +6,11 @@
 /*   By: ssallami <ssallami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/07 16:32:01 by ssallami          #+#    #+#             */
-/*   Updated: 2025/03/13 22:45:02 by ssallami         ###   ########.fr       */
+/*   Updated: 2025/03/14 02:09:31 by ssallami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft/libft.h"
-#include "lib_linksList.h"
+#include "../push_swap.h"
 
 int	check_nmb(char *str)
 {

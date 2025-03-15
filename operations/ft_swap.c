@@ -6,11 +6,11 @@
 /*   By: ssallami <ssallami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/07 16:15:05 by ssallami          #+#    #+#             */
-/*   Updated: 2025/03/07 16:25:37 by ssallami         ###   ########.fr       */
+/*   Updated: 2025/03/14 02:11:46 by ssallami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "operations.h"
+#include "../push_swap.h"
 
 void	ft_swap(t_list **head_stack)
 {

@@ -6,11 +6,11 @@
 /*   By: ssallami <ssallami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/07 16:31:52 by ssallami          #+#    #+#             */
-/*   Updated: 2025/03/12 17:34:51 by ssallami         ###   ########.fr       */
+/*   Updated: 2025/03/14 02:09:17 by ssallami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft/libft.h"
+#include "../push_swap.h"
 
 int	check_integer(char *str)
 {

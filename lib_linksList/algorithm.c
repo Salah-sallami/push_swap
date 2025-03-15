@@ -6,13 +6,11 @@
 /*   By: ssallami <ssallami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/07 16:31:14 by ssallami          #+#    #+#             */
-/*   Updated: 2025/03/08 00:54:09 by ssallami         ###   ########.fr       */
+/*   Updated: 2025/03/14 02:09:02 by ssallami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../operations/operations.h"
 #include "../push_swap.h"
-#include "lib_linksList.h"
 
 static void	loop_stack_a(t_list **stack_a, int min_index)
 {

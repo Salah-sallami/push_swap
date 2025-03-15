@@ -6,12 +6,11 @@
 /*   By: ssallami <ssallami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/07 16:16:33 by ssallami          #+#    #+#             */
-/*   Updated: 2025/03/07 16:27:29 by ssallami         ###   ########.fr       */
+/*   Updated: 2025/03/14 02:12:49 by ssallami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../ft_printf/ft_printf.h"
-#include "operations.h"
+#include "../push_swap.h"
 
 void	ft_rrb(t_list **stack_b, char vld)
 {

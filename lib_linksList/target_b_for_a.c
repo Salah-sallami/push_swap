@@ -6,12 +6,10 @@
 /*   By: ssallami <ssallami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/08 17:46:36 by ssallami          #+#    #+#             */
-/*   Updated: 2025/03/08 21:46:09 by ssallami         ###   ########.fr       */
+/*   Updated: 2025/03/14 02:10:53 by ssallami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../lib_linksList/lib_linksList.h"
-#include "../operations/operations.h"
 #include "../push_swap.h"
 
 static int	find_nearest_data_a(t_list **stack_a, int data_a, int data_b)

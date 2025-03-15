@@ -6,11 +6,11 @@
 /*   By: ssallami <ssallami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/08 22:06:29 by ssallami          #+#    #+#             */
-/*   Updated: 2025/03/08 22:06:37 by ssallami         ###   ########.fr       */
+/*   Updated: 2025/03/15 00:55:56 by ssallami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../checker.h"
 
 size_t	ft_strlen(const char *s1)
 {

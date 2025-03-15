@@ -1,19 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pa.c                                               :+:      :+:    :+:   */
+/*   ft_lstnew_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ssallami <ssallami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/07 16:15:33 by ssallami          #+#    #+#             */
-/*   Updated: 2025/03/14 02:11:55 by ssallami         ###   ########.fr       */
+/*   Created: 2025/03/13 19:42:45 by ssallami          #+#    #+#             */
+/*   Updated: 2025/03/15 02:53:26 by ssallami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../checker.h"
 
-void	ft_pa(t_list **stack_a, t_list **stack_b)
+t_check	*ft_lstnew(int content)
 {
-	ft_push(stack_b, stack_a);
-	ft_printf("pa\n");
+	t_check	*node;
+
+	node = (t_check *)malloc(sizeof(t_check));
+	if (!node)
+		return (NULL);
+	node->data = content;
+	node->link = NULL;
+	return (node);
 }

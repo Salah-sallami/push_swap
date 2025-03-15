@@ -6,13 +6,10 @@
 /*   By: ssallami <ssallami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/08 21:49:12 by ssallami          #+#    #+#             */
-/*   Updated: 2025/03/14 01:01:10 by ssallami         ###   ########.fr       */
+/*   Updated: 2025/03/15 02:05:20 by ssallami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf/ft_printf.h"
-#include "lib_linksList/lib_linksList.h"
-#include "libft/libft.h"
 #include "push_swap.h"
 
 void	free_stack(t_list **stack_a)
@@ -44,7 +41,8 @@ int	main(int argc, char *argv[])
 	t_list	*stack_a;
 	t_list	*stack_b;
 
-
+	if (argc == 1)
+		return (0);
 	stack_b = NULL;
 	if (!argv[1] || ((check_nmb(argv[1])) == 1 && !argv[2]))
 	{

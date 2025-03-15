@@ -6,11 +6,11 @@
 /*   By: ssallami <ssallami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/08 21:58:32 by ssallami          #+#    #+#             */
-/*   Updated: 2025/03/08 21:58:41 by ssallami         ###   ########.fr       */
+/*   Updated: 2025/03/15 00:55:37 by ssallami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "lib_linksList.h"
+#include "../checker.h"
 
 int	ft_lstsize(t_check *lst)
 {
