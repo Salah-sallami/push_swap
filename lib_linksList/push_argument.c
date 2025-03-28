@@ -6,12 +6,11 @@
 /*   By: ssallami <ssallami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/07 16:33:01 by ssallami          #+#    #+#             */
-/*   Updated: 2025/03/14 02:10:20 by ssallami         ###   ########.fr       */
+/*   Updated: 2025/03/20 21:03:49 by ssallami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
-
 
 static int	process_numbers(char **p, t_list **head, int index)
 {

@@ -6,7 +6,7 @@
 /*   By: ssallami <ssallami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/09 00:47:46 by ssallami          #+#    #+#             */
-/*   Updated: 2025/03/15 02:56:22 by ssallami         ###   ########.fr       */
+/*   Updated: 2025/03/28 08:18:28 by ssallami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,46 +21,44 @@ static int	check_new_line(char *move)
 	return (0);
 }
 
-static int	check_str(char *move, char *str)
+static int	ft_strcmp(char *s1, char *s2)
 {
 	int	i;
 
 	i = 0;
-	while (move[i] != '\n')
-	{
-		if (move[i] != str[i])
-			return (0);
+	while ((s1[i] == s2[i]) && s1[i] && s2[i])
 		i++;
-	}
-	return (1);
+	if (s1[i] - s2[i] == 0)
+		return (1);
+	return (0);
 }
 
 static int	process(t_check **stack_a, t_check **stack_b, char *move)
 {
-	if (check_str(move, "pb"))
+	if (ft_strcmp(move, "pb\n"))
 		ft_pb(stack_a, stack_b);
-	else if (check_str(move, "pa"))
+	else if (ft_strcmp(move, "pa\n"))
 		ft_pa(stack_a, stack_b);
-	else if (check_str(move, "sb"))
+	else if (ft_strcmp(move, "sb\n"))
 		ft_sb(stack_b);
-	else if (check_str(move, "sa"))
+	else if (ft_strcmp(move, "sa\n"))
 		ft_sa(stack_a);
-	else if (check_str(move, "ss"))
+	else if (ft_strcmp(move, "ss\n"))
 		ft_ss(stack_a, stack_b);
-	else if (check_str(move, "ra"))
+	else if (ft_strcmp(move, "ra\n"))
 		ft_ra(stack_a);
-	else if (check_str(move, "rb"))
+	else if (ft_strcmp(move, "rb\n"))
 		ft_rb(stack_b);
-	else if (check_str(move, "rr"))
+	else if (ft_strcmp(move, "rr\n"))
 		ft_rr(stack_a, stack_b);
-	else if (check_str(move, "rra"))
+	else if (ft_strcmp(move, "rra\n"))
 		ft_rra(stack_a);
-	else if (check_str(move, "rrb"))
+	else if (ft_strcmp(move, "rrb\n"))
 		ft_rrb(stack_b);
-	else if (check_str(move, "rrr"))
+	else if (ft_strcmp(move, "rrr\n"))
 		ft_rrr(stack_a, stack_b);
 	else
-		return (ft_printf("Error\n"), 0);
+		free_error(stack_a);
 	return (1);
 }
 
@@ -72,9 +70,9 @@ static int	read_moves(t_check **stack_a, t_check **stack_b)
 	while (move != NULL)
 	{
 		if (!check_new_line(move))
-			break;
+			break ;
 		if (!process(stack_a, stack_b, move))
-			return (free(move),0);
+			return (free(move), 0);
 		free(move);
 		move = get_next_line(STDIN_FILENO);
 	}
@@ -91,11 +89,9 @@ int	main(int argc, char *argv[])
 		return (0);
 	stack_a = malloc(sizeof(t_check));
 	stack_b = NULL;
-	if (!argv[1] || (check_nmb(argv[1]) && !argv[2]) 
-		|| !push_argument(argv,&stack_a) || !check_double(stack_a))
-		return (ft_printf("Error\n"), 0);
-	if (check_sort(&stack_a) != 1)
-		return (0);
+	if (!argv[1] || (check_nmb(argv[1]) && !argv[2]) || !push_argument(argv,
+			&stack_a) || !check_double(stack_a))
+		free_error(&stack_a);
 	if (read_moves(&stack_a, &stack_b) != 1)
 		return (0);
 	if (check_sort(&stack_a) == 1)

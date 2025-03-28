@@ -6,7 +6,7 @@
 /*   By: ssallami <ssallami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/08 22:02:43 by ssallami          #+#    #+#             */
-/*   Updated: 2025/03/15 02:54:45 by ssallami         ###   ########.fr       */
+/*   Updated: 2025/03/22 01:44:14 by ssallami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,6 +71,7 @@ int				push_argument(char *argv[], t_check **head);
 int				check_sort(t_check **stack_a);
 t_check			*ft_lstnew(int content);
 void			free_split(char **p);
+void			free_error(t_check **stack_a);
 
 /////////==== FT_PRINTF ====////////
 int				ft_putchar(int c);

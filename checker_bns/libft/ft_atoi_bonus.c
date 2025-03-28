@@ -6,7 +6,7 @@
 /*   By: ssallami <ssallami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/08 22:06:05 by ssallami          #+#    #+#             */
-/*   Updated: 2025/03/15 02:46:57 by ssallami         ###   ########.fr       */
+/*   Updated: 2025/03/22 01:51:17 by ssallami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@ int	ft_atoi(char *str, int *vld)
 {
 	long	sum;
 	int		sign;
-
 
 	sum = 0;
 	sign = 1;
@@ -32,7 +31,7 @@ int	ft_atoi(char *str, int *vld)
 	while (*str >= '0' && *str <= '9')
 	{
 		sum = sum * 10 + (*str - '0');
-		if ((sign == 1 && (sum > INT_MAX)) || (sign == -1 && (-sum < INT_MIN)))
+		if (sum * sign > INT_MAX || sign * sum < INT_MIN)
 		{
 			*vld = 0;
 			return (*vld);

@@ -6,7 +6,7 @@
 /*   By: ssallami <ssallami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/07 16:33:57 by ssallami          #+#    #+#             */
-/*   Updated: 2025/03/14 02:10:48 by ssallami         ###   ########.fr       */
+/*   Updated: 2025/03/22 01:50:37 by ssallami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,7 @@ void	sort(t_list **stack_a)
 		return (ft_sa(stack_a));
 	c = (*stack_a)->link->link->data;
 	if (a < c && a < b && c < b)
-		return (apply_moves(stack_a, 'r'), apply_moves(stack_a, 's'),
-			apply_moves(stack_a, 'R'));
+		return (apply_moves(stack_a, 'R'), apply_moves(stack_a, 's'));
 	if (b < a && b < c && a < c)
 		return (apply_moves(stack_a, 's'));
 	if (b < c && b < a && c < a)

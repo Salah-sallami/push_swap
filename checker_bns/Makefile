@@ -11,7 +11,7 @@ SOURCES =	checker_bonus.c \
 			libft/ft_substr_bonus.c libft/ft_atoi_bonus.c \
 			lib_linksList/ft_lstsize_bonus.c lib_linksList/check_integer_bonus.c \
 			lib_linksList/check_nmb_bonus.c lib_linksList/add_at_end_bonus.c \
-			lib_linksList/check_double_bonus.c lib_linksList/push_argument_bonus.c \
+			lib_linksList/check_double_bonus.c lib_linksList/push_argument_bonus.c lib_linksList/free_error_bonus.c \
 			lib_linksList/check_sort_bonus.c lib_linksList/ft_lstnew_bonus.c lib_linksList/free_split_bonus.c \
 			ft_printf/ft_putchar_bonus.c ft_printf/ft_printf_bonus.c \
 			ft_printf/ft_putnbr_bonus.c ft_printf/ft_putstr_bonus.c \

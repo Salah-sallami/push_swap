@@ -6,7 +6,7 @@
 /*   By: ssallami <ssallami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/07 16:27:59 by ssallami          #+#    #+#             */
-/*   Updated: 2025/03/14 02:11:06 by ssallami         ###   ########.fr       */
+/*   Updated: 2025/03/20 21:04:18 by ssallami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@ int	ft_atoi(char *str, int *vld)
 {
 	long	sum;
 	int		sign;
-
 
 	sum = 0;
 	sign = 1;

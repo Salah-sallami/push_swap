@@ -6,12 +6,11 @@
 /*   By: ssallami <ssallami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/08 21:59:00 by ssallami          #+#    #+#             */
-/*   Updated: 2025/03/15 02:46:09 by ssallami         ###   ########.fr       */
+/*   Updated: 2025/03/20 21:03:36 by ssallami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../checker.h"
-
 
 static int	process_numbers(char **p, t_check **head, int index)
 {

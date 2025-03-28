@@ -6,13 +6,11 @@
 /*   By: ssallami <ssallami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/26 21:49:05 by ssallami          #+#    #+#             */
-/*   Updated: 2025/03/15 01:14:40 by ssallami         ###   ########.fr       */
+/*   Updated: 2025/03/20 21:04:48 by ssallami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../checker.h"
-
-
 
 char	*ft_strjoin(char *s1, char *s2)
 {
@@ -53,4 +51,3 @@ int	ft_strchr(char *s, char c)
 	}
 	return (0);
 }
-
